@@ -52,7 +52,7 @@ jobs:
           git commit -m "Update package.json to version ${{ env.VERSION }}"
 
       - name: Merge tag into release branch
-        run: git merge ${{ env.VERSION }} --no-ff -m "Merge tag ${{ env.VERSION }} into release branch"
+        run: git merge ${{ env.VERSION }} --no-ff --allow-unrelated-histories -m "Merge tag ${{ env.VERSION }} into release branch"
       
       - name: Push changes to release branch
         run: git push origin release
